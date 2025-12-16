@@ -20,4 +20,4 @@ contractRouter.delete("/:id", (req, res) =>
   contractController.delete(req, res)
 );
 
-export { contractRouter };
+export default contractRouter;

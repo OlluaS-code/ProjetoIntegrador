@@ -14,27 +14,19 @@ serviceRoutes.use(ensureAuthenticated);
 serviceRoutes.post("/", (req, res) => serviceController.create(req, res));
 
 serviceRoutes.get(
-  "/",
-
-  (req, res) => serviceController.getAll(req, res)
+  "/",(req, res) => serviceController.getAll(req, res)
 );
 
 serviceRoutes.get(
-  "/:id",
-
-  (req, res) => serviceController.getById(req, res)
+  "/:id",(req, res) => serviceController.getById(req, res)
 );
 
 serviceRoutes.put(
-  "/:id",
-
-  (req, res) => serviceController.update(req, res)
+  "/:id",(req, res) => serviceController.update(req, res)
 );
 
 serviceRoutes.delete(
-  "/:id",
-
-  (req, res) => serviceController.delete(req, res)
+  "/:id",(req, res) => serviceController.delete(req, res)
 );
 
-export { serviceRoutes };
+export default serviceRoutes;

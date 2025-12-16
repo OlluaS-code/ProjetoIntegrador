@@ -1,6 +1,7 @@
 import { IUserRepository } from '../core/interfaces/IUsers';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
+import { config } from '../adapters/config/config';
 import { User } from '../core/models/User';
 
 interface AuthResponse {
@@ -22,7 +23,7 @@ export class AuthenticateUserService {
       throw new Error("Invalid credentials.");
     }
     
-    const secret = process.env.JWT_SECRET || 'fallback_secret_key'; 
+    const secret = config.JWT();
     
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },

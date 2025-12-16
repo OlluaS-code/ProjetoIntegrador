@@ -18,4 +18,4 @@ clientRoutes.get('/', (req, res) => clientController.getAll(req, res));
 clientRoutes.put('/:id', (req, res) => clientController.update(req, res));
 clientRoutes.delete('/:id', (req, res) => clientController.delete(req, res));
 
-export { clientRoutes };
+export default clientRoutes;
