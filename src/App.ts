@@ -7,13 +7,13 @@ import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/users", userRoutes);
 app.use("/clients", clientRoutes);
 app.use("/services", serviceRoutes);
 app.use("/contracts", contractRoutes);
-app.use(cors());
 
 app.get("/", (req, res) => {
     console.log("API is running 🚀");
